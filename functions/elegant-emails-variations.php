@@ -8,16 +8,16 @@ function variations_email_logo(){
 
 	switch ($domain) {
 		case 'elegant-address.com':
-			echo 'http://elegant-address.com/wp-content/uploads/logo.png';
+			echo get_site_url().'/wp-content/uploads/logo.png';
 			break;
 
 		case 'elegant-ski.com':
-			echo 'http://elegant-ski.com/wp-content/uploads/Untitled.png';
+			echo get_site_url().'/wp-content/uploads/logo.png';
 			break;
 		
 		default:
 			//For local development purposes
-			echo 'http://elegant-address.com/wp-content/uploads/logo.png';
+			echo get_site_url().'/wp-content/uploads/logo.png';
 			break;
 	}
 
