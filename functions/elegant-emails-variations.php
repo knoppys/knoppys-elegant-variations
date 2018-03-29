@@ -1,10 +1,17 @@
 <?php
-//This function sipulates hte path for the header logo in the presentation email
-function variations_email_logo(){
+
+function get_host(){
 
 	$siteurl = get_site_url();
 	$parse = parse_url($siteurl);
 	$domain = $parse['host'];
+
+	return $domain;
+
+}
+
+//This function sipulates hte path for the header logo in the presentation email
+function variations_email_logo($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com':
@@ -22,11 +29,7 @@ function variations_email_logo(){
 	}
 
 }
-function variations_contact_details(){
-
-	$siteurl = get_site_url();
-	$parse = parse_url($siteurl);
-	$domain = $parse['host'];
+function variations_contact_details($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com': ?>
@@ -60,6 +63,70 @@ function variations_contact_details(){
 			</div>
 
 		<?php break;
+	}
+
+}
+
+function variations_featrues($domain){
+
+	switch ($domain) {
+		case 'elegant-address.com': ?>
+				
+				<li data-id="panoramic_sea_view">Panoramic Sea View</li>
+				<li data-id="sea_view">Sea View</li>
+				<li data-id="walk_to_beach">Walk To Beach</li>
+				<li data-id="walk_to_shop">Walk To Shop</li>
+				<li data-id="aircon_full">Aircon Full</li>
+				<li data-id="heated_pool">Heated Pool</li>
+				<li data-id="Guardian">Guardian</li>
+				<li data-id="spa">Spa</li>
+				<li data-id="gym">Gym</li>
+				<li data-id="beach_access">Beach Access</li>
+				<li data-id="heli_pad">Heli Pad</li>
+				<li data-id="golf">Golf</li>
+				<li data-id="water_front">Water Front</li>
+				<li data-id="skytv">Sky TV</li>
+				<li data-id="wifi">WiFi</li>
+				<li data-id="Parking">Parking</li>
+				<li data-id="small_sea_view">Small Sea View</li>
+				<li data-id="indoor_pool">Indoor Pool</li>
+
+			<?php break;
+
+		case 'elegant-ski.com': ?>
+
+				<li data-id="ski_in_ski_out">Ski in ski out</li>
+				<li data-id="close_to_slopes">Close to slopes</li>
+				<li data-id="close_to_centre">Close to centre</li>
+				<li data-id="hot_tub">Mountain views</li>
+				<li data-id="pool">Pool</li>
+				<li data-id="parking">Parking</li>
+				<li data-id="Guardian">Guardian</li>
+				<li data-id="gym">Gym</li>			
+
+			<?php break;
+		
+		default: ?>
+			
+				<li data-id="panoramic_sea_view">Panoramic Sea View</li>
+				<li data-id="sea_view">Sea View</li>
+				<li data-id="walk_to_beach">Walk To Beach</li>
+				<li data-id="walk_to_shop">Walk To Shop</li>
+				<li data-id="aircon_full">Aircon Full</li>
+				<li data-id="heated_pool">Heated Pool</li>
+				<li data-id="Guardian">Guardian</li>
+				<li data-id="spa">Spa</li>
+				<li data-id="gym">Gym</li>
+				<li data-id="beach_access">Beach Access</li>
+				<li data-id="heli_pad">Heli Pad</li>
+				<li data-id="golf">Golf</li>
+				<li data-id="water_front">Water Front</li>
+				<li data-id="skytv">Sky TV</li>
+				<li data-id="wifi">WiFi</li>
+				<li data-id="Parking">Parking</li>
+				<li data-id="small_sea_view">Small Sea View</li>
+				<li data-id="indoor_pool">Indoor Pool</li>
+			<?php break;
 	}
 
 }
