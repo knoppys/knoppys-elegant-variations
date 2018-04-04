@@ -24,7 +24,7 @@ function variations_email_logo($domain){
 		
 		default:
 			//For local development purposes
-			echo get_site_url().'/wp-content/uploads/logo.png';
+			echo 'http://www.elegant-address.com/wp-content/uploads/logo.png';
 			break;
 	}
 
@@ -57,8 +57,8 @@ function variations_contact_details($domain){
 		?>
 
 			<div style="cursor:auto;color:#000000;font-family:Arial,Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;text-align:center;">
-				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="http://www.elegant-ski.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">www.elegant-ski.com</span></a></span></p>
-				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="mailto:ski@elegant-address.com " style="color: #bc8536" target="_blank"><span style="color: #bc8536">ski@elegant-address.com </span></a></span></p>
+				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="http://www.elegant-ski.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">Local Dev</span></a></span></p>
+				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="mailto:ski@elegant-address.com " style="color: #bc8536" target="_blank"><span style="color: #bc8536">localdev@elegant-address.com </span></a></span></p>
 				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="tel:441244629963 " style="color: #bc8536" target="_blank"><span style="color: #bc8536">+44 (0) 1244 629963 </span></a></span></p>
 			</div>
 
@@ -127,6 +127,45 @@ function variations_featrues($domain){
 				<li data-id="small_sea_view">Small Sea View</li>
 				<li data-id="indoor_pool">Indoor Pool</li>
 			<?php break;
+	}
+
+}
+
+//This function stipulates the from address for the headers in the emails
+function variations_from_address($domain){
+
+	switch ($domain) {
+		case 'elegant-address.com':
+			echo 'From: Elegant Address <enquiries@elegant-address.com>';
+			break;
+
+		case 'elegant-ski.com':
+			echo 'From: Elegant Address <ski@elegant-address.com>';
+			break;
+		
+		default:
+			//For local development purposes
+			echo 'From: Elegant Address <mail@localhost>';
+			break;
+	}
+
+}
+
+//This function returns the correct subject line for the email
+function variations_email_subject($domain){
+
+	switch ($domain) {
+		case 'elegant-address.com':
+			echo 'Elegant Address Property Presentation';
+			break;
+
+		case 'elegant-ski.com':
+			echo 'Elegant Address Ski Property Presentation';
+			break;
+		
+		default:
+			echo 'Elegant Address Dev Property Presentation';
+			break;
 	}
 
 }
