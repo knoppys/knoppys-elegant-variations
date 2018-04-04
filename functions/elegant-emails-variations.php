@@ -136,18 +136,20 @@ function variations_from_address($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com':
-			echo 'From: Elegant Address <enquiries@elegant-address.com>';
+			$from = 'From: Elegant Address <enquiries@elegant-address.com>';
 			break;
 
 		case 'elegant-ski.com':
-			echo 'From: Elegant Address <ski@elegant-address.com>';
+			$from = 'From: Elegant Address <ski@elegant-address.com>';
 			break;
 		
 		default:
 			//For local development purposes
-			echo 'From: Elegant Address <mail@localhost>';
+			$from = 'From: Elegant Address <enquiries@elegant-address.com>';
 			break;
 	}
+
+	return $from;
 
 }
 
@@ -156,16 +158,18 @@ function variations_email_subject($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com':
-			echo 'Elegant Address Property Presentation';
+			$subject = 'Elegant Address Property Presentation';
 			break;
 
 		case 'elegant-ski.com':
-			echo 'Elegant Address Ski Property Presentation';
+			$subject = 'Elegant Address Ski Property Presentation';
 			break;
 		
 		default:
-			echo 'Elegant Address Dev Property Presentation';
+			$subject = 'Elegant Address Dev Property Presentation';
 			break;
 	}
+
+	return $subject;
 
 }
