@@ -313,4 +313,17 @@ function variations_tenure($domain){
 
 }
 
+/******************
+This idecides which images to use for the property thubnail
+***********************************************************/
+function variations_thumbnail($ID, $size){
 
+	if (get_the_post_thumbnail_url($ID)) {
+		$url = get_the_post_thumbnail_url($ID, $size);
+	} elseif (!get_the_post_thumbnail_url($ID) && get_field('image_1',$ID)) {
+		$url = get_field('image_1',$ID);
+	} elseif (!get_the_post_thumbnail_url($ID) && !get_field('image_1',$ID)){
+		$url = get_template_directory_uri().'/images/no-image'.$size.'.png';
+	}
+	return $url;
+}
