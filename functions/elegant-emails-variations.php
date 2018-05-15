@@ -316,7 +316,7 @@ function variations_tenure($domain){
 /******************
 This idecides which images to use for the property thubnail
 ***********************************************************/
-function variations_thumbnail($ID, $size){
+function variations_thumbnail($ID, $size, $domain){
 
 	
 
