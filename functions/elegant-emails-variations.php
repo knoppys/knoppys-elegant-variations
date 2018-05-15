@@ -259,11 +259,17 @@ function variations_agents($domain){
 		case 'elegant-barbados.com':
 			$termsArgs = array( 'taxonomy' => 'propertyagent' ); 
 			$terms = get_terms($termsArgs);
+			foreach ($terms as $term) { ?>
+				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
+			<?php }
 			break;
-		
+			
 		default:
 			$termsArgs = array( 'taxonomy' => 'propertyagent' ); 
 			$terms = get_terms($termsArgs);
+			foreach ($terms as $term) { ?>
+				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
+			<?php }
 			break;
 	}
 
@@ -291,11 +297,17 @@ function variations_tenure($domain){
 		case 'elegant-barbados.com':
 			$termsArgs = array( 'taxonomy' => 'servicetype' ); 
 			$terms = get_terms($termsArgs);
+			foreach ($terms as $term) { ?>
+				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
+			<?php }
 			break;
 		
 		default:
 			$termsArgs = array( 'taxonomy' => 'servicetype' ); 
 			$terms = get_terms($termsArgs);
+			foreach ($terms as $term) { ?>
+				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
+			<?php }
 			break;
 	}
 
