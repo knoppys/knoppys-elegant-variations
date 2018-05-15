@@ -21,6 +21,10 @@ function variations_email_logo($domain){
 		case 'elegant-ski.com':
 			echo get_site_url().'/wp-content/uploads/logo.png';
 			break;
+
+		case 'elegant-barbados.com':
+			echo get_site_url().'/wp-content/uploads/logo.png';
+			break;
 		
 		default:
 			//For local development purposes
@@ -51,6 +55,16 @@ function variations_contact_details($domain){
 			</div>
 
 		<?php break;
+
+		case 'elegant-barbados.com': ?>
+
+			<div style="cursor:auto;color:#000000;font-family:Arial,Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;text-align:center;">
+				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="http://www.elegant-barbados.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">www.elegant-barbados.com</span></a></span></p>
+				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="mailto:enquiries@elegant-barbados.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">enquiries@elegant-barbados.com</span></a></span></p>
+				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="tel:441244629963 " style="color: #bc8536" target="_blank"><span style="color: #bc8536">+44 (0) 1244 629963 </span></a></span></p>
+			</div>
+
+		<?php break;
 		
 		default:
 		//For local development purposes
@@ -67,7 +81,7 @@ function variations_contact_details($domain){
 
 }
 
-function variations_featrues($domain){
+function variations_features($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com': ?>
@@ -105,27 +119,68 @@ function variations_featrues($domain){
 				<li data-id="gym">Gym</li>			
 
 			<?php break;
+
+		case 'elegant-barbados.com': ?>
+
+				<li data-id="reference">Reference</li>
+				<li data-id="number_of_beds">Number of beds</li>
+				<li data-id="sleeps">Sleeps</li>
+				<li data-id="price">Price</li>
+				<li data-id="size">Size</li>
+				<li data-id="heated_pool">Heated Pool</li>
+				<li data-id="indoor_pool">Indoor Pool</li>
+				<li data-id="small_sea_view">Small Sea View</li>
+				<li data-id="sea_view">Sea View</li>
+				<li data-id="panoramic_sea_view">Panoramic Sea View</li>
+				<li data-id="air_con_full">Air Con Full</li>
+				<li data-id="air_con_partial">Air Con Partial</li>
+				<li data-id="wifi">Wifi</li>
+				<li data-id="sky_tv">Sky TV</li>
+				<li data-id="parking">Parking</li>
+				<li data-id="guardian">Guardian</li>
+				<li data-id="walk_to_beach">Walk to beach</li>
+				<li data-id="walk_to_shop">Walk to shop</li>
+				<li data-id="tennis">Tennis</li>
+				<li data-id="spa">Spa</li>
+				<li data-id="gym">Gym</li>
+				<li data-id="helipad">Helipad</li>
+				<li data-id="beach_access">Beach access</li>
+				<li data-id="type_name">Property Type</li>
+				<li data-id="level">Level</li>
+				<li data-id="number_of_baths">Number of bathrooms</li>
+		
+
+			<?php break;
 		
 		default: ?>
 			
-				<li data-id="panoramic_sea_view">Panoramic Sea View</li>
-				<li data-id="sea_view">Sea View</li>
-				<li data-id="walk_to_beach">Walk To Beach</li>
-				<li data-id="walk_to_shop">Walk To Shop</li>
-				<li data-id="aircon_full">Aircon Full</li>
+				<li data-id="reference">Reference</li>
+				<li data-id="number_of_beds">Number of beds</li>
+				<li data-id="sleeps">Sleeps</li>
+				<li data-id="price">Price</li>
+				<li data-id="size">Size</li>
 				<li data-id="heated_pool">Heated Pool</li>
-				<li data-id="Guardian">Guardian</li>
+				<li data-id="indoor_pool">Indoor Pool</li>
+				<li data-id="small_sea_view">Small Sea View</li>
+				<li data-id="sea_view">Sea View</li>
+				<li data-id="panoramic_sea_view">Panoramic Sea View</li>
+				<li data-id="air_con_full">Air Con Full</li>
+				<li data-id="air_con_partial">Air Con Partial</li>
+				<li data-id="wifi">Wifi</li>
+				<li data-id="sky_tv">Sky TV</li>
+				<li data-id="parking">Parking</li>
+				<li data-id="guardian">Guardian</li>
+				<li data-id="walk_to_beach">Walk to beach</li>
+				<li data-id="walk_to_shop">Walk to shop</li>
+				<li data-id="tennis">Tennis</li>
 				<li data-id="spa">Spa</li>
 				<li data-id="gym">Gym</li>
-				<li data-id="beach_access">Beach Access</li>
-				<li data-id="heli_pad">Heli Pad</li>
-				<li data-id="golf">Golf</li>
-				<li data-id="water_front">Water Front</li>
-				<li data-id="skytv">Sky TV</li>
-				<li data-id="wifi">WiFi</li>
-				<li data-id="Parking">Parking</li>
-				<li data-id="small_sea_view">Small Sea View</li>
-				<li data-id="indoor_pool">Indoor Pool</li>
+				<li data-id="helipad">Helipad</li>
+				<li data-id="beach_access">Beach access</li>
+				<li data-id="type_name">Property Type</li>
+				<li data-id="level">Level</li>
+				<li data-id="number_of_baths">Number of bathrooms</li>
+
 			<?php break;
 	}
 
@@ -142,10 +197,14 @@ function variations_from_address($domain){
 		case 'elegant-ski.com':
 			$from = 'From: Elegant Address <ski@elegant-address.com>';
 			break;
+
+		case 'elegant-barbados.com':
+			$from = 'From: Elegant Address <enquiries@elegant-barbados.com>';
+			break;
 		
 		default:
 			//For local development purposes
-			$from = 'From: Elegant Address <enquiries@elegant-address.com>';
+			$from = 'From: Elegant Address <enquiries@elegant-barbados.com>';
 			break;
 	}
 
@@ -164,12 +223,82 @@ function variations_email_subject($domain){
 		case 'elegant-ski.com':
 			$subject = 'Elegant Address Ski Property Presentation';
 			break;
+
+		case 'elegant-barbados.com':
+			$subject = 'Elegant Address Barbados Property Presentation';
+			break;
 		
 		default:
-			$subject = 'Elegant Address Dev Property Presentation';
+			$subject = 'Elegant Address Barbados Property Presentation';
 			break;
 	}
 
 	return $subject;
 
 }
+
+//This function get the agent name from the post meta in SKI and SOF, 
+//remaining sites are taken from the agent taxonomy
+function variations_agents($domain){
+
+	switch ($domain) {
+		case 'elegant-address.com':
+			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<li data-id="<?php echo strtolower(str_replace(array(" ", "'"), '', $meta_value)); ?>"><?php echo $meta_value; ?></li>
+			<?php }
+			break;
+
+		case 'elegant-ski.com':
+			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<li data-id="<?php echo strtolower(str_replace(array(" ", "'"), '', $meta_value)); ?>"><?php echo $meta_value; ?></li>
+			<?php }
+			break;
+
+		case 'elegant-barbados.com':
+			$termsArgs = array( 'taxonomy' => 'propertyagent' ); 
+			$terms = get_terms($termsArgs);
+			break;
+		
+		default:
+			$termsArgs = array( 'taxonomy' => 'propertyagent' ); 
+			$terms = get_terms($termsArgs);
+			break;
+	}
+
+}
+
+//This function get the right tenure type from the post meta in SKI and SOF,
+//The barbados site is made up from service_type not sale_or_rent
+function variations_tenure($domain){
+
+	switch ($domain) {
+		case 'elegant-address.com':
+			$meta_values = get_meta_values( 'sale_or_rent', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<li data-id="<?php echo strtolower(str_replace(array(" ", "'"), '', $meta_value)); ?>"><?php echo $meta_value; ?></li>
+			<?php }
+			break;
+
+		case 'elegant-ski.com':
+			$meta_values = get_meta_values( 'sale_or_rent', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<li data-id="<?php echo strtolower(str_replace(array(" ", "'"), '', $meta_value)); ?>"><?php echo $meta_value; ?></li>
+			<?php }
+			break;
+
+		case 'elegant-barbados.com':
+			$termsArgs = array( 'taxonomy' => 'servicetype' ); 
+			$terms = get_terms($termsArgs);
+			break;
+		
+		default:
+			$termsArgs = array( 'taxonomy' => 'servicetype' ); 
+			$terms = get_terms($termsArgs);
+			break;
+	}
+
+}
+
+
