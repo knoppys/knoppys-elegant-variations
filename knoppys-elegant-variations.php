@@ -3,7 +3,7 @@
 Plugin Name:       Knoppys Elegant Emails Variations
 Plugin URI:        https://www.knoppys.co.uk
 Description:       This plugins defines the variations betwee the websites which are called into the Knoppys Elegant Email Plugin
-Version:           4.7
+Version:           4.8
 Author:            Knoppys Digital Limited
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
