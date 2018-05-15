@@ -333,7 +333,7 @@ function variations_thumbnail($ID, $size, $domain){
 			if (get_the_post_thumbnail_url($ID)) {
 				$url = get_the_post_thumbnail_url($ID, $size);
 			} elseif (!get_the_post_thumbnail_url($ID) && get_field('image_1',$ID)) {
-				$url = get_template_directory_uri().'/images/property-images/'get_field('image_1',$ID);
+				$url = get_template_directory_uri().'/images/property-images/'.get_field('image_1',$ID);
 			} elseif (!get_the_post_thumbnail_url($ID) && !get_field('image_1',$ID)){
 				$url = get_template_directory_uri().'/images/no-image'.$size.'.png';
 			}
@@ -344,7 +344,7 @@ function variations_thumbnail($ID, $size, $domain){
 			if (get_the_post_thumbnail_url($ID)) {
 				$url = get_the_post_thumbnail_url($ID, $size);
 			} elseif (!get_the_post_thumbnail_url($ID) && get_field('image_1',$ID)) {
-				$url = get_template_directory_uri().'/images/property-images/'get_field('image_1',$ID);
+				$url = get_template_directory_uri().'/images/property-images/'.get_field('image_1',$ID);
 			} elseif (!get_the_post_thumbnail_url($ID) && !get_field('image_1',$ID)){
 				$url = get_template_directory_uri().'/images/no-image'.$size.'.png';
 			}
