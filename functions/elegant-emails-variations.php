@@ -318,15 +318,15 @@ This idecides which images to use for the property thubnail
 ***********************************************************/
 function variations_thumbnail($ID, $size, $domain){
 
-	
-
 	switch ($domain) {
 		case 'elegant-address.com':
 			$url = get_the_post_thumbnail_url($ID, $size);
+			return $url;
 			break;
 
 		case 'elegant-ski.com':
 			$url = get_the_post_thumbnail_url($ID, $size);
+			return $url;
 			break;
 
 		case 'elegant-barbados.com':
