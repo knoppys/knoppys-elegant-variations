@@ -81,7 +81,7 @@ function variations_contact_details($domain){
 
 }
 
-function variations_features($domain){
+function variations_features_filters($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com': ?>
@@ -122,68 +122,167 @@ function variations_features($domain){
 
 		case 'elegant-barbados.com': ?>
 
-				<li data-id="reference">Reference</li>
-				<li data-id="number_of_beds">Number of beds</li>
-				<li data-id="sleeps">Sleeps</li>
-				<li data-id="price">Price</li>
-				<li data-id="size">Size</li>
-				<li data-id="heated_pool">Heated Pool</li>
-				<li data-id="indoor_pool">Indoor Pool</li>
-				<li data-id="small_sea_view">Small Sea View</li>
-				<li data-id="sea_view">Sea View</li>
-				<li data-id="panoramic_sea_view">Panoramic Sea View</li>
-				<li data-id="air_con_full">Air Con Full</li>
-				<li data-id="air_con_partial">Air Con Partial</li>
-				<li data-id="wifi">Wifi</li>
-				<li data-id="sky_tv">Sky TV</li>
-				<li data-id="parking">Parking</li>
-				<li data-id="guardian">Guardian</li>
-				<li data-id="walk_to_beach">Walk to beach</li>
-				<li data-id="walk_to_shop">Walk to shop</li>
-				<li data-id="tennis">Tennis</li>
-				<li data-id="spa">Spa</li>
-				<li data-id="gym">Gym</li>
-				<li data-id="helipad">Helipad</li>
-				<li data-id="beach_access">Beach access</li>
-				<li data-id="type_name">Property Type</li>
-				<li data-id="level">Level</li>
-				<li data-id="number_of_baths">Number of bathrooms</li>
+				<li data-id="pool">Pool</li>
+				<li data-id="communal_pool">Communal Pool</li>   
+				<li data-id="sea_view">Sea View</li>   
+				<li data-id="panoramic_sea_view">Panoramic Sea View</li>   
+				<li data-id="air_con_full">Air Con Full</li>   
+				<li data-id="air_con_partial">Air Con Partial</li>   
+				<li data-id="gym">Gym</li>   
+				<li data-id="spa">Spa</li>   
+				<li data-id="staff">Staff</li>   
+				<li data-id="wifi">Wifi</li>   
+				<li data-id="parking">Parking</li>   
+				<li data-id="sky_tv">Satallite TV</li>   
+				<li data-id="cook_chef">Cook / Chef</li>   
+				<li data-id="on_the_beach">On the Beach</li>   
+				<li data-id="walk_to_shop">Walk to shop</li>   
+				<li data-id="beach_club_access">Beach Club Access</li>   
+				<li data-id="social_membership">Social Membership</li>   
+				<li data-id="gated_community">Gated Community</li>   
+				<li data-id="tennis">Tennis Nearby</li>   
+				<li data-id="golf_nearby">Golf Nearby</li>   
+				<li data-id="shuttle">Complimentary Shuttle</li>   
+				<li data-id="guardian">Guardian</li>   
+				<li data-id="walk_to_beach">Walk to beach</li>   
+
 		
 
 			<?php break;
 		
 		default: ?>
 			
-				<li data-id="reference">Reference</li>
-				<li data-id="number_of_beds">Number of beds</li>
-				<li data-id="sleeps">Sleeps</li>
-				<li data-id="price">Price</li>
-				<li data-id="size">Size</li>
-				<li data-id="heated_pool">Heated Pool</li>
-				<li data-id="indoor_pool">Indoor Pool</li>
-				<li data-id="small_sea_view">Small Sea View</li>
-				<li data-id="sea_view">Sea View</li>
-				<li data-id="panoramic_sea_view">Panoramic Sea View</li>
-				<li data-id="air_con_full">Air Con Full</li>
-				<li data-id="air_con_partial">Air Con Partial</li>
-				<li data-id="wifi">Wifi</li>
-				<li data-id="sky_tv">Sky TV</li>
-				<li data-id="parking">Parking</li>
-				<li data-id="guardian">Guardian</li>
-				<li data-id="walk_to_beach">Walk to beach</li>
-				<li data-id="walk_to_shop">Walk to shop</li>
-				<li data-id="tennis">Tennis</li>
-				<li data-id="spa">Spa</li>
-				<li data-id="gym">Gym</li>
-				<li data-id="helipad">Helipad</li>
-				<li data-id="beach_access">Beach access</li>
-				<li data-id="type_name">Property Type</li>
-				<li data-id="level">Level</li>
-				<li data-id="number_of_baths">Number of bathrooms</li>
+				<li data-id="pool">Pool</li>
+				<li data-id="communal_pool">Communal Pool</li>   
+				<li data-id="sea_view">Sea View</li>   
+				<li data-id="panoramic_sea_view">Panoramic Sea View</li>   
+				<li data-id="air_con_full">Air Con Full</li>   
+				<li data-id="air_con_partial">Air Con Partial</li>   
+				<li data-id="gym">Gym</li>   
+				<li data-id="spa">Spa</li>   
+				<li data-id="staff">Staff</li>   
+				<li data-id="wifi">Wifi</li>   
+				<li data-id="parking">Parking</li>   
+				<li data-id="sky_tv">Satallite TV</li>   
+				<li data-id="cook_chef">Cook / Chef</li>   
+				<li data-id="on_the_beach">On the Beach</li>   
+				<li data-id="walk_to_shop">Walk to shop</li>   
+				<li data-id="beach_club_access">Beach Club Access</li>   
+				<li data-id="social_membership">Social Membership</li>   
+				<li data-id="gated_community">Gated Community</li>   
+				<li data-id="tennis">Tennis Nearby</li>   
+				<li data-id="golf_nearby">Golf Nearby</li>   
+				<li data-id="shuttle">Complimentary Shuttle</li>   
+				<li data-id="guardian">Guardian</li>   
+				<li data-id="walk_to_beach">Walk to beach</li>   
+
 
 			<?php break;
 	}
 
+}
+
+//This variation controlls the header and footer row of the email table
+function variations_table_header($domain){ 
+	
+		switch ($domain) {
+			case 'elegant-address.com': ?>
+				<th>Image</th>
+				<th class="name titlerow">Name</th>
+				<th class="hide">Ref</th>
+				<th>Location</th>
+				<th>Type</th>
+				<th>Sale or Rent</th>
+				<th>Agent Name</th>
+				<th>Number of Beds</th>
+				<th>Spa</th>					
+				<th>Heated Pool</th>
+				<th>Beach Access</th>
+				<th>Air Con Full</th>
+				<th>Heli Pad</th>	
+			<?php break;
+			case 'elegant-ski.com': ?>
+				<th>Image</th>
+				<th class="name titlerow">Name</th>
+				<th class="hide">Ref</th>
+				<th>Location</th>
+				<th>Type</th>
+				<th>Sale or Rent</th>
+				<th>Agent Name</th>
+				<th>Number of Beds</th>
+				<th>Spa</th>					
+				<th>Heated Pool</th>
+				<th>Beach Access</th>
+				<th>Air Con Full</th>
+				<th>Heli Pad</th>	
+			<?php break;
+			case 'elegant-barbados.com': ?>
+				<th>Image</th>
+				<th class="name titlerow">Name</th>
+				<th class="hide">Ref</th>
+				<th>Location</th>
+				<th>Type</th>
+				<th>Sale or Rent</th>
+				<th>Agent Name</th>
+				<th>Number of Beds</th>
+				<th>Spa</th>					
+				<th>Pool</th>
+				<th>Walk to Beach</th>
+				<th>Air Con Full</th>				
+			<?php break;
+			
+			default:?>
+				<th>Image</th>
+				<th class="name titlerow">Name</th>
+				<th class="hide">Ref</th>
+				<th>Location</th>
+				<th>Type</th>
+				<th>Sale or Rent</th>
+				<th>Agent Name</th>
+				<th>Number of Beds</th>
+				<th>Spa</th>					
+				<th>Pool</th>
+				<th>Walk to Beach</th>
+				<th>Air Con Full</th>		
+			<?php break;
+		}
+
+	
+}
+
+//THe correct property features for the property listings in the email table
+function variations_table_features($domain, $meta){
+	switch ($domain) {
+		case 'elegant-address.com': ?>
+			<td class=""><?php if(isset($meta['spa'][0])){echo meta_check($meta['spa'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['heated_pool'][0])){echo meta_check($meta['heated_pool'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['beach_access'][0])){echo meta_check($meta['beach_access'][0]);} ?></td>	
+			<td class=""><?php if(isset($meta['aircon_full'][0])){echo meta_check($meta['aircon_full'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['heli_pad'][0])){echo meta_check($meta['heli_pad'][0]);} ?></td>	
+			<?php break; 
+
+		case 'elegant-ski.com': ?>
+			<td class=""><?php if(isset($meta['spa'][0])){echo meta_check($meta['spa'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['heated_pool'][0])){echo meta_check($meta['heated_pool'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['beach_access'][0])){echo meta_check($meta['beach_access'][0]);} ?></td>	
+			<td class=""><?php if(isset($meta['aircon_full'][0])){echo meta_check($meta['aircon_full'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['heli_pad'][0])){echo meta_check($meta['heli_pad'][0]);} ?></td>	
+			<?php break; 
+		
+		case 'elegant-barbados.com': ?>
+			<td class=""><?php if(isset($meta['spa'][0])){echo meta_check($meta['spa'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['pool'][0])){echo meta_check($meta['pool'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['on_the_beach'][0])){echo meta_check($meta['on_the_beach'][0]);} ?></td>	
+			<td class=""><?php if(isset($meta['air_con_full'][0])){echo meta_check($meta['aircon_full'][0]);} ?></td>
+			<?php break; 
+		
+		default:?>
+			<td class=""><?php if(isset($meta['spa'][0])){echo meta_check($meta['spa'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['heated_pool'][0])){echo meta_check($meta['heated_pool'][0]);} ?></td>
+			<td class=""><?php if(isset($meta['on_the_beach'][0])){echo meta_check($meta['on_the_beach'][0]);} ?></td>	
+			<td class=""><?php if(isset($meta['air_con_full'][0])){echo meta_check($meta['aircon_full'][0]);} ?></td>
+			<?php break; 
+	}
 }
 
 //This function stipulates the from address for the headers in the emails
@@ -239,7 +338,7 @@ function variations_email_subject($domain){
 
 //This function get the agent name from the post meta in SKI and SOF, 
 //remaining sites are taken from the agent taxonomy
-function variations_agents($domain){
+function variations_agents_filters($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com':
@@ -274,10 +373,47 @@ function variations_agents($domain){
 	}
 
 }
+function variations_agents_table($domain, $id){
+
+	switch ($domain) {
+		case 'elegant-address.com':
+			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<p><?php echo $meta_value; ?></p>
+			<?php }
+			break;
+
+		case 'elegant-ski.com':
+			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<p><?php echo $meta_value; ?></p>
+			<?php }
+			break;
+
+		case 'elegant-barbados.com':			
+			$terms = get_the_terms($id, 'propertyagent');
+			if ($terms) {
+				foreach ($terms as $term) { ?>
+					<p><?php echo $term->name; ?></p>
+				<?php }
+			}
+			break;
+			
+		default:
+			$terms = get_the_terms($id, 'propertyagent');
+			if ($terms) {
+				foreach ($terms as $term) { ?>
+					<p><?php echo $term->name; ?></p>
+				<?php }
+			}
+			break;
+	}
+
+}
 
 //This function get the right tenure type from the post meta in SKI and SOF,
 //The barbados site is made up from service_type not sale_or_rent
-function variations_tenure($domain){
+function variations_tenure_filters($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com':
@@ -308,6 +444,43 @@ function variations_tenure($domain){
 			foreach ($terms as $term) { ?>
 				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
 			<?php }
+			break;
+	}
+
+}
+function variations_tenure_table($domain, $id){
+
+	switch ($domain) {
+		case 'elegant-address.com':
+			$meta_values = get_meta_values( 'sale_or_rent', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<p><?php echo $meta_value; ?></p>
+			<?php }
+			break;
+
+		case 'elegant-ski.com':
+			$meta_values = get_meta_values( 'sale_or_rent', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<p><?php echo $meta_value; ?></p>
+			<?php }
+			break;
+
+		case 'elegant-barbados.com':
+			$terms = get_the_terms($id, 'servicetype');
+			if ($terms) {
+				foreach ($terms as $term) { ?>
+					<p><?php echo $term->name; ?></p>
+				<?php }
+			}
+			break;
+		
+		default:
+			$terms = get_the_terms($id, 'servicetype');
+			if ($terms) {
+				foreach ($terms as $term) { ?>
+					<p><?php echo $term->name; ?></p>
+				<?php }
+			}
 			break;
 	}
 
