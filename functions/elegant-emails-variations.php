@@ -379,14 +379,14 @@ function variations_agents_table($domain, $id){
 		case 'elegant-address.com':
 			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
 			foreach ($meta_values as $meta_value) { ?>
-				<p><?php echo $meta_value; ?></p>
+				<?php echo $meta_value; ?>
 			<?php }
 			break;
 
 		case 'elegant-ski.com':
 			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
 			foreach ($meta_values as $meta_value) { ?>
-				<p><?php echo $meta_value; ?></p>
+				<?php echo $meta_value; ?>
 			<?php }
 			break;
 
@@ -394,7 +394,7 @@ function variations_agents_table($domain, $id){
 			$terms = get_the_terms($id, 'propertyagent');
 			if ($terms) {
 				foreach ($terms as $term) { ?>
-					<p><?php echo $term->name; ?></p>
+					<?php echo $term->name; ?>
 				<?php }
 			}
 			break;
@@ -403,7 +403,7 @@ function variations_agents_table($domain, $id){
 			$terms = get_the_terms($id, 'propertyagent');
 			if ($terms) {
 				foreach ($terms as $term) { ?>
-					<p><?php echo $term->name; ?></p>
+					<?php echo $term->name; ?>
 				<?php }
 			}
 			break;
@@ -526,7 +526,7 @@ function variations_thumbnail($ID, $size, $domain){
 	}
 }
 
-function variations_brochurelink($domain, $aptid) {+
+function variations_brochurelink($domain, $aptid) {
 	switch ($domain) {
 		case 'elegant-address.com':
 			$url = '<p><a style="color:#bc8536;" target="_blank" href="'.$domain.'/download-brochure/?brochure_id='.$aptid.'"><span style="color:#bc8536;padding:5px;color:font-size: 16px; line-height: 1.5; font-weight: bold;">Download Our Brochure</span></a></p>';
@@ -546,6 +546,60 @@ function variations_brochurelink($domain, $aptid) {+
 		default:
 			$url = $url = '<p><a style="color:#bc8536;" target="_blank" href="'.get_the_permalink($aptid).'?request=brochure"><span style="color:#bc8536;padding:5px;color:font-size: 16px; line-height: 1.5; font-weight: bold;">Download Our Brochure</span></a></p>';
 			return $url;
+			break;
+	}
+}
+
+function variations_agent_classes($domain, $id) {
+	switch ($domain) {
+		case 'elegant-address.com':
+
+			return '';
+			break;
+
+		case 'elegant-ski.com':
+			return '';
+			break;
+
+		case 'www.elegant-barbados.com':
+			$terms = get_the_terms( $id, 'propertyagent' );
+			if ($terms) {
+				foreach ($terms as $term) {
+					echo 'term_'.$term->term_id.' ';
+				}
+			}
+			return $url;
+			break;
+		
+		default:
+			return '';
+			break;
+	}
+}
+
+function variations_tenure_classes($domain, $id) {
+	switch ($domain) {
+		case 'elegant-address.com':
+
+			return '';
+			break;
+
+		case 'elegant-ski.com':
+			return '';
+			break;
+
+		case 'www.elegant-barbados.com':
+			$terms = get_the_terms( $id, 'servicetype' );
+			if ($terms) {
+				foreach ($terms as $term) {
+					echo 'term_'.$term->term_id.' ';
+				}
+			}
+			return $url;
+			break;
+		
+		default:
+			return '';
 			break;
 	}
 }
