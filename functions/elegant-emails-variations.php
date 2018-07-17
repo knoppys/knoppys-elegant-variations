@@ -377,17 +377,11 @@ function variations_agents_table($domain, $id){
 
 	switch ($domain) {
 		case 'elegant-address.com':
-			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
-			foreach ($meta_values as $meta_value) { ?>
-				<?php echo $meta_value; ?>
-			<?php }
+			echo get_post_meta($id,'agent_name', true);
 			break;
 
 		case 'elegant-ski.com':
-			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
-			foreach ($meta_values as $meta_value) { ?>
-				<?php echo $meta_value; ?>
-			<?php }
+			echo get_post_meta($id,'agent_name', true);
 			break;
 
 		case 'www.elegant-barbados.com':			
@@ -452,17 +446,11 @@ function variations_tenure_table($domain, $id){
 
 	switch ($domain) {
 		case 'elegant-address.com':
-			$meta_values = get_meta_values( 'sale_or_rent', 'properties' ); 
-			foreach ($meta_values as $meta_value) { ?>
-				<p><?php echo $meta_value; ?></p>
-			<?php }
+			echo get_post_meta($id,'sale_or_rent', true);
 			break;
 
 		case 'elegant-ski.com':
-			$meta_values = get_meta_values( 'sale_or_rent', 'properties' ); 
-			foreach ($meta_values as $meta_value) { ?>
-				<p><?php echo $meta_value; ?></p>
-			<?php }
+			echo get_post_meta($id,'sale_or_rent', true);
 			break;
 
 		case 'www.elegant-barbados.com':
