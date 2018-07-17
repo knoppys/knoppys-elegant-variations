@@ -22,7 +22,7 @@ function variations_email_logo($domain){
 			echo get_site_url().'/wp-content/uploads/logo.png';
 			break;
 
-		case 'elegant-barbados.com':
+		case 'www.elegant-barbados.com':
 			echo get_site_url().'/wp-content/uploads/logo.png';
 			break;
 		
@@ -56,11 +56,11 @@ function variations_contact_details($domain){
 
 		<?php break;
 
-		case 'elegant-barbados.com': ?>
+		case 'www.elegant-barbados.com': ?>
 
 			<div style="cursor:auto;color:#000000;font-family:Arial,Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;text-align:center;">
-				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="http://www.elegant-barbados.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">www.elegant-barbados.com</span></a></span></p>
-				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="mailto:enquiries@elegant-barbados.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">enquiries@elegant-barbados.com</span></a></span></p>
+				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="http://www.www.elegant-barbados.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">www.www.elegant-barbados.com</span></a></span></p>
+				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="mailto:enquiries@www.elegant-barbados.com" style="color: #bc8536" target="_blank"><span style="color: #bc8536">enquiries@www.elegant-barbados.com</span></a></span></p>
 				<p><span style="font-size: 16px;line-height: 1.5;font-weight: bold"><a href="tel:441244629963 " style="color: #bc8536" target="_blank"><span style="color: #bc8536">+44 (0) 1244 629963 </span></a></span></p>
 			</div>
 
@@ -120,7 +120,7 @@ function variations_features_filters($domain){
 
 			<?php break;
 
-		case 'elegant-barbados.com': ?>
+		case 'www.elegant-barbados.com': ?>
 
 				<li data-id="pool">Pool</li>
 				<li data-id="communal_pool">Communal Pool</li>   
@@ -216,7 +216,7 @@ function variations_table_header($domain){
 				<th>Air Con Full</th>
 				<th>Heli Pad</th>	
 			<?php break;
-			case 'elegant-barbados.com': ?>
+			case 'www.elegant-barbados.com': ?>
 				<th>Image</th>
 				<th class="name titlerow">Name</th>
 				<th class="hide">Ref</th>
@@ -269,7 +269,7 @@ function variations_table_features($domain, $meta){
 			<td class=""><?php if(isset($meta['heli_pad'][0])){echo meta_check($meta['heli_pad'][0]);} ?></td>	
 			<?php break; 
 		
-		case 'elegant-barbados.com': ?>
+		case 'www.elegant-barbados.com': ?>
 			<td class=""><?php if(isset($meta['spa'][0])){echo meta_check($meta['spa'][0]);} ?></td>
 			<td class=""><?php if(isset($meta['pool'][0])){echo meta_check($meta['pool'][0]);} ?></td>
 			<td class=""><?php if(isset($meta['on_the_beach'][0])){echo meta_check($meta['on_the_beach'][0]);} ?></td>	
@@ -297,13 +297,13 @@ function variations_from_address($domain){
 			$from = 'From: Elegant Address <ski@elegant-address.com>';
 			break;
 
-		case 'elegant-barbados.com':
-			$from = 'From: Elegant Barbados <enquiries@elegant-barbados.com>';
+		case 'www.elegant-barbados.com':
+			$from = 'From: Elegant Barbados <enquiries@www.elegant-barbados.com>';
 			break;
 		
 		default:
 			//For local development purposes
-			$from = 'From: Elegant Address <enquiries@elegant-barbados.com>';
+			$from = 'From: Elegant Address <enquiries@www.elegant-barbados.com>';
 			break;
 	}
 
@@ -323,7 +323,7 @@ function variations_email_subject($domain){
 			$subject = 'Elegant Address Ski Property Presentation';
 			break;
 
-		case 'elegant-barbados.com':
+		case 'www.elegant-barbados.com':
 			$subject = 'Elegant Address Property Presentation';
 			break;
 		
@@ -355,7 +355,7 @@ function variations_agents_filters($domain){
 			<?php }
 			break;
 
-		case 'elegant-barbados.com':
+		case 'www.elegant-barbados.com':
 			$termsArgs = array( 'taxonomy' => 'propertyagent' ); 
 			$terms = get_terms($termsArgs);
 			foreach ($terms as $term) { ?>
@@ -390,7 +390,7 @@ function variations_agents_table($domain, $id){
 			<?php }
 			break;
 
-		case 'elegant-barbados.com':			
+		case 'www.elegant-barbados.com':			
 			$terms = get_the_terms($id, 'propertyagent');
 			if ($terms) {
 				foreach ($terms as $term) { ?>
@@ -430,7 +430,7 @@ function variations_tenure_filters($domain){
 			<?php }
 			break;
 
-		case 'elegant-barbados.com':
+		case 'www.elegant-barbados.com':
 			$termsArgs = array( 'taxonomy' => 'servicetype' ); 
 			$terms = get_terms($termsArgs);
 			foreach ($terms as $term) { ?>
@@ -465,7 +465,7 @@ function variations_tenure_table($domain, $id){
 			<?php }
 			break;
 
-		case 'elegant-barbados.com':
+		case 'www.elegant-barbados.com':
 			$terms = get_the_terms($id, 'servicetype');
 			if ($terms) {
 				foreach ($terms as $term) { ?>
@@ -502,7 +502,7 @@ function variations_thumbnail($ID, $size, $domain){
 			return $url;
 			break;
 
-		case 'elegant-barbados.com':
+		case 'www.elegant-barbados.com':
 			if (get_the_post_thumbnail_url($ID)) {
 				$url = get_the_post_thumbnail_url($ID, $size);
 			} elseif (!get_the_post_thumbnail_url($ID) && get_field('image_1',$ID)) {
@@ -526,7 +526,7 @@ function variations_thumbnail($ID, $size, $domain){
 	}
 }
 
-function variations_brochurelink($domain, $aptid) {
+function variations_brochurelink($domain, $aptid) {+
 	switch ($domain) {
 		case 'elegant-address.com':
 			$url = '<p><a style="color:#bc8536;" target="_blank" href="'.$domain.'/download-brochure/?brochure_id='.$aptid.'"><span style="color:#bc8536;padding:5px;color:font-size: 16px; line-height: 1.5; font-weight: bold;">Download Our Brochure</span></a></p>';
@@ -538,14 +538,14 @@ function variations_brochurelink($domain, $aptid) {
 			return $url;
 			break;
 
-		case 'elegant-barbados.com':
-
+		case 'www.elegant-barbados.com':
 			$url = $url = '<p><a style="color:#bc8536;" target="_blank" href="'.get_the_permalink($aptid).'?request=brochure"><span style="color:#bc8536;padding:5px;color:font-size: 16px; line-height: 1.5; font-weight: bold;">Download Our Brochure</span></a></p>';
 			return $url;
 			break;
 		
 		default:
-			
+			$url = $url = '<p><a style="color:#bc8536;" target="_blank" href="'.get_the_permalink($aptid).'?request=brochure"><span style="color:#bc8536;padding:5px;color:font-size: 16px; line-height: 1.5; font-weight: bold;">Download Our Brochure</span></a></p>';
+			return $url;
 			break;
 	}
 }
