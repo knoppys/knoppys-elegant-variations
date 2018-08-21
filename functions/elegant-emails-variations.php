@@ -619,11 +619,23 @@ function variations_agent_classes($domain, $id) {
 	switch ($domain) {
 		case 'elegant-address.com':
 
-			return '';
+			$terms = get_the_terms( $id, 'propertyagent' );
+			if ($terms) {
+				foreach ($terms as $term) {
+					echo 'term_'.$term->term_id.' ';
+				}
+			}
+			return $url;
 			break;
-
+			
 		case 'elegant-ski.com':
-			return '';
+			$terms = get_the_terms( $id, 'propertyagent' );
+			if ($terms) {
+				foreach ($terms as $term) {
+					echo 'term_'.$term->term_id.' ';
+				}
+			}
+			return $url;
 			break;
 
 		case 'www.elegant-barbados.com':
@@ -655,7 +667,13 @@ function variations_tenure_classes($domain, $id) {
 			break;
 
 		case 'elegant-ski.com':
-			return '';
+			$terms = get_the_terms( $id, 'servicetype' );
+			if ($terms) {
+				foreach ($terms as $term) {
+					echo 'term_'.$term->term_id.' ';
+				}
+			}
+			return $url;
 			break;
 
 		case 'www.elegant-barbados.com':
