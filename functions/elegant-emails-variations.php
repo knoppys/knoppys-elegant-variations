@@ -356,9 +356,10 @@ function variations_agents_filters($domain){
 			break;
 
 		case 'elegant-ski.com':
-			$meta_values = get_meta_values( 'agent_name', 'properties' ); 
-			foreach ($meta_values as $meta_value) { ?>
-				<li data-id="<?php echo strtolower(str_replace(array(" ", "'"), '', $meta_value)); ?>"><?php echo $meta_value; ?></li>
+			$termsArgs = array( 'taxonomy' => 'propertyagent' ); 
+			$terms = get_terms($termsArgs);
+			foreach ($terms as $term) { ?>
+				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
 			<?php }
 			break;
 
@@ -392,7 +393,12 @@ function variations_agents_table($domain, $id){
 			break;
 
 		case 'elegant-ski.com':
-			echo get_post_meta($id,'agent_name', true);
+			$terms = get_the_terms($id, 'propertyagent');
+			if ($terms) {
+				foreach ($terms as $term) { ?>
+					<?php echo $term->name; ?>
+				<?php }
+			}
 			break;
 
 		case 'www.elegant-barbados.com':			
@@ -437,9 +443,10 @@ function variations_tenure_filters($domain){
 			break;
 
 		case 'elegant-ski.com':
-			$meta_values = get_meta_values( 'sale_or_rent', 'properties' ); 
-			foreach ($meta_values as $meta_value) { ?>
-				<li data-id="<?php echo strtolower(str_replace(array(" ", "'"), '', $meta_value)); ?>"><?php echo $meta_value; ?></li>
+			$termsArgs = array( 'taxonomy' => 'servicetype' ); 
+			$terms = get_terms($termsArgs);
+			foreach ($terms as $term) { ?>
+				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
 			<?php }
 			break;
 
@@ -473,7 +480,12 @@ function variations_tenure_table($domain, $id){
 			break;
 
 		case 'elegant-ski.com':
-			echo get_post_meta($id,'sale_or_rent', true);
+			$terms = get_the_terms($id, 'servicetype');
+			if ($terms) {
+				foreach ($terms as $term) { ?>
+					<p><?php echo $term->name; ?></p>
+				<?php }
+			}
 			break;
 
 		case 'www.elegant-barbados.com':
@@ -599,7 +611,7 @@ function variations_brochurelink($domain, $aptid) {
 			break;
 
 		case 'elegant-ski.com':
-			$url = '<p><a style="color:#bc8536;" target="_blank" href="'.$domain.'/download-brochure/?brochure_id='.$aptid.'"><span style="color:#bc8536;padding:5px;color:font-size: 16px; line-height: 1.5; font-weight: bold;">Download Our Brochure</span></a></p>';
+			$url = $url = '<p><a style="color:#bc8536;" target="_blank" href="'.get_the_permalink($aptid).'?request=brochure"><span style="color:#bc8536;padding:5px;color:font-size: 16px; line-height: 1.5; font-weight: bold;">Download Our Brochure</span></a></p>';
 			return $url;
 			break;
 
@@ -713,7 +725,25 @@ function variations_email_ataglance($domain,$id){
 			break;
 
 		case 'elegant-ski.com':
-			$content = get_post_meta($id,'BriefDescription', true);
+			$meta = get_post_meta($id);
+			ob_start(); ?>
+				
+				<h3 class="widget-title">At a Glance</h3>		
+				<ul class="single_property main_features">
+					<!-- Number of Bathrooms -->	
+					<li>Bedrooms: <?php echo $meta['number_of_beds'][0]; ?></li>																		
+					<li>Bathrooms: <?php echo $meta['number_of_baths'][0]; ?></li>
+					<!-- Sleeps -->
+					<?php if($meta['sleeps'][0]){ ?>
+						<li>Sleeps: <?php echo $meta['sleeps'][0]; ?> </li>
+					<?php } ?>	
+					<?php if($meta['size'][0]){ ?>
+						<li>Size: <?php echo $meta['size'][0]; ?> </li>
+					<?php } ?>		
+
+				</ul>
+			<?php 
+			$content = ob_get_clean();
 			return $content;
 			break;
 
