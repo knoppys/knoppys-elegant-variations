@@ -644,6 +644,11 @@ function variations_agent_classes($domain, $id) {
 
 function variations_tenure_classes($domain, $id) {
 	switch ($domain) {
+		case 'knoppysdev.com':
+
+			return '';
+			break;
+
 		case 'elegant-address.com':
 
 			return '';
@@ -664,7 +669,13 @@ function variations_tenure_classes($domain, $id) {
 			break;
 		
 		default:
-			return '';
+			$terms = get_the_terms( $id, 'servicetype' );
+			if ($terms) {
+				foreach ($terms as $term) {
+					echo 'term_'.$term->term_id.' ';
+				}
+			}
+			return $url;
 			break;
 	}
 }
