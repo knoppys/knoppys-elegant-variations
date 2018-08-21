@@ -189,7 +189,7 @@ function variations_table_header($domain){
 			case 'elegant-address.com': ?>
 				<th>Image</th>
 				<th class="name titlerow">Name</th>
-				
+				<th>Status</th>
 				<th>Location</th>
 				<th>Type</th>
 				<th>Sale or Rent</th>
@@ -204,7 +204,7 @@ function variations_table_header($domain){
 			case 'elegant-ski.com': ?>
 				<th>Image</th>
 				<th class="name titlerow">Name</th>
-				
+				<th>Status</th>
 				<th>Location</th>
 				<th>Type</th>
 				<th>Sale or Rent</th>
@@ -219,7 +219,7 @@ function variations_table_header($domain){
 			case 'www.elegant-barbados.com': ?>
 				<th>Image</th>
 				<th class="name titlerow">Name</th>
-				
+				<th>Status</th>
 				<th>Location</th>
 				<th>Type</th>
 				<th>Sale or Rent</th>
@@ -234,7 +234,7 @@ function variations_table_header($domain){
 			default:?>
 				<th>Image</th>
 				<th class="name titlerow">Name</th>
-				
+				<th>Status</th>
 				<th>Location</th>
 				<th>Type</th>
 				<th>Sale or Rent</th>
