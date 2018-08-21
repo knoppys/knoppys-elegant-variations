@@ -486,12 +486,7 @@ function variations_tenure_table($domain, $id){
 			break;
 		
 		default:
-			$terms = get_the_terms($id, 'servicetype');
-			if ($terms) {
-				foreach ($terms as $term) { ?>
-					<p><?php echo $term->name; ?></p>
-				<?php }
-			}
+			echo get_post_meta($id,'sale_or_rent', true);
 			break;
 	}
 
