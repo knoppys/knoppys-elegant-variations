@@ -531,10 +531,9 @@ function variations_propertytype_filters($domain){
 			break;
 			
 		default:
-			$termsArgs = array( 'taxonomy' => 'servicetype' ); 
-			$terms = get_terms($termsArgs);
-			foreach ($terms as $term) { ?>
-				<li data-id="<?php echo 'term_'.$term->term_id; ?>"><?php echo $term->name; ?></li>
+			$meta_values = get_meta_values( 'type_name', 'properties' ); 
+			foreach ($meta_values as $meta_value) { ?>
+				<li data-id="<?php echo strtolower(str_replace(array(" ", "'"), '', $meta_value)); ?>"><?php echo $meta_value; ?></li>
 			<?php }
 			break;
 	}
