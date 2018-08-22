@@ -826,3 +826,31 @@ function knoppys_variations_search_header($domain){
 	}
 
 }
+
+
+function knoppys_variations_popupform($domain){
+
+	switch ($domain) {
+		case 'knoppysdev.com':
+			return '[contact-form-7 id="33151" title="Popup Form"]';
+			break;
+
+		case 'elegant-address.com':
+			return '[contact-form-7 id="36151" title="Popup Form"]';
+			break;
+
+		case 'elegant-ski.com':
+			return '[contact-form-7 id="52162" title="Popup Form"]';
+			break;
+
+		case 'www.elegant-barbados.com': 		
+			return '[contact-form-7 id="3773" title="Popup Form"]';
+			break;
+		
+		default:
+			return '[contact-form-7 id="5233" title="Popup Form"]';
+			break;
+	}
+
+}
+
