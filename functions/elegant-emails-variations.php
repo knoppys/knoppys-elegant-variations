@@ -15,20 +15,20 @@ function variations_email_logo($domain){
 
 	switch ($domain) {
 		case 'elegant-address.com':
-			echo get_template_directory().'/img/email-background.png';
+			echo get_template_directory_uri().'/img/email-background.png';
 			break;
 
 		case 'elegant-ski.com':
-			echo get_template_directory().'/images/email-background.png';
+			echo get_template_directory_uri().'/images/email-background.png';
 			break;
 
 		case 'www.elegant-barbados.com':
-			echo get_template_directory().'/images/email-background.png';
+			echo get_template_directory_uri().'/images/email-background.png';
 			break;
 		
 		default:
 			//For local development purposes
-			echo get_template_directory().'/images/email-background.png';
+			echo get_template_directory_uri().'/images/email-background.png';
 			break;
 	}
 
